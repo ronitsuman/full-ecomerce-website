@@ -8,21 +8,31 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
+import { NavLink } from 'react-router-dom';
+import styles from './Mobilemenu.module.css'
 
 
 
 
 
-const Mobilemenu = () => {
+
+
+
+
+const Mobilemenu = ({handleBox}) => {
+
+
   
+
+ 
   return (
-    <div className='relative flex items-center    gap-4 bg-gray-500  ' >
+    <div className='relative flex items-center    gap-4 bg-gray-500 '  >
         {/* Mobile menu starts here  */}
-    <div className=' w-[290px]  bg-gray-400  h-[680px]   rounded-lg  p-4 absolute top-4 transition-opacity ease-in-out duration-75  ' >
+    <div  className={` w-[290px]  bg-[#FFFFFF] border-1   h-[680px]   rounded-lg  p-4 absolute  top-4 transition-[left] duration-300 ease-in  ${handleBox?"left-0":"left-[300px]" } `} >
             {/* mobile menu header start here  */}
           <header className='flex items-center justify-between'>
-          <a href="#" className='text-lg font-bold '>3legant</a>
-          <HiOutlineXMark  />
+          <a href="#" className='{styles.text}text-lg font-bold ' >3legant</a>
+          <HiOutlineXMark onClick={handleBox}/>
           </header>
           {/* mobile menu header ends here  */}
           {/* list start here */}
@@ -34,16 +44,16 @@ const Mobilemenu = () => {
             <nav>
                 <ul className='flex flex-col gap-8  '>
                     <li className='border-b-2 p-2 '>
-                        <a href="#" className='text-base font-bold leading-6'>Home</a>
+                        <NavLink to="/" className='text-base font-bold leading-6'>Home</NavLink>
                     </li>
                     <li className='border-b-2 p-2 '>
-                        <a href="#" className='flex items-center justify-between text-base font-bold leading-6'>Shop  <TfiAngleDown /></a>
+                        <NavLink to="/shop" className='flex items-center justify-between text-base font-bold leading-6'>Shop  <TfiAngleDown /></NavLink>
                     </li>
                     <li className='border-b-2 p-2 '>
-                        <a href="#" className='flex items-center justify-between text-base font-bold leading-6 '>Products <TfiAngleDown /> </a>
+                        <NavLink to="/product" className='flex items-center justify-between text-base font-bold leading-6 '>Products <TfiAngleDown /> </NavLink>
                     </li>
                     <li className='border-b-2 p-2 '>
-                        <a href="#" className='text-base font-bold leading-6'>Contact Us</a>
+                        <NavLink to="/about"  className='text-base font-bold leading-6'>Contact Us</NavLink>
                     </li>
                 </ul>
             </nav>
