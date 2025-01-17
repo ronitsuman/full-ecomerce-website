@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const Headers = () => {
+const Headers = ({cartCount}) => {
     
     const [Flyer ,setFlyer] = useState(false)
 
@@ -21,16 +21,16 @@ const Headers = () => {
         setFlyer((prev)=>!prev)
     }
   return (
-    <div >
+    <div className='m-auto'>
         
         {/* Notification pannel starts Here :-  */}
-        <section className='mx-0 bg-[#F3F5F7] relative  flex item center justify-center  gap-4 text-sm  py-2 px-8  sm:text-base  sm:gap-4 sm:items-center '>
+        <section className='mx-0  bg-[#F3F5F7] relative  flex item center justify-center  gap-4 text-sm  py-2 px-8  sm:text-base  sm:gap-4 sm:items-center '>
             {/* icon and text starts here  */}
             <div className='flex items-center justify-center  gap-2 sm:text-xl '>
             <LuTicketPercent className='leading-3' />
-            <p className='text-[12px] leading-4 sm:text-base '>30% off storewide - Limited time ! </p>
+            <p className='text-[12px] leading-4 sm:text-base font-bold '>30% off storewide - Limited time ! </p>
             </div>
-            <a href="#" className='hidden sm:block sm:text-base  sm:border-b-2 border-blue-500 sm:flex items-center justify-center gap-4 sm:text-blue-500      '>Shop Now  <FaArrowRight /> </a> 
+            <a href="#" className='hidden sm:block sm:text-base  sm:border-b-2 border-blue-500 sm:flex items-center justify-center gap-4 sm:text-blue-500  font-bold      '>Shop Now  <FaArrowRight /> </a> 
             <HiMiniXMark className='absolute right-4  sm:right-22'  />
 
            
@@ -38,7 +38,7 @@ const Headers = () => {
         </section>
         {/* notification panel ends here */}
         {/* nav section starts here */}
-        <section className='flex items-center justify-between  px-4 py-2 sm:px-20 md:px-10 lg:py-4'>
+        <section className='flex items-center justify-between  px-8 py-4  sm:h-[60px]   lg:py-4 lg:px-40 '>
             {/* icon and logo outline starts here */}
             <div className='flex items-center gap-1 '>
    
@@ -69,7 +69,7 @@ const Headers = () => {
             <HiMagnifyingGlass className='hidden sm:block md:text-base lg:text-2xl hover:text-3xl cursor-pointer' />   
             <FaRegCircleUser className='hidden sm:block md:text-base lg:text-2xl hover:text-3xl  cursor-pointer   ' /> 
             <HiOutlineShoppingBag  className='md:text-base lg:text-2xl hover:text-3xl cursor-pointer '/>
-            <span className='bg-black border-2 rounded-lg flex items-center justify-center  w-6 h-5   text-white hover:text-3xl cursor-pointer '>2</span>
+            <span className='bg-black border-2 rounded-lg flex items-center justify-center  w-6 h-5   text-white hover:text-3xl cursor-pointer '>{cartCount}</span>
 
             </div>
 

@@ -28,7 +28,9 @@ const Mobilemenu = ({handleBox}) => {
   return (
     <div className='relative flex items-center    gap-4 bg-gray-500 '  >
         {/* Mobile menu starts here  */}
-    <div  className={` w-[290px]  bg-[#FFFFFF] border-1   h-[680px]   rounded-lg  p-4 absolute  top-4 transition-[left] duration-300 ease-in  ${handleBox?"left-0":"left-[300px]" } `} >
+    <div  className={` w-[290px]  bg-[#FFFFFF] bg-red-400 border-1   h-[680px]   rounded-lg  p-4 absolute  transition-[left] top-4  duration-300 ease-in 
+      
+           ${handleBox ? "left-[0px ]":"left-[-500px] " } `} >
             {/* mobile menu header start here  */}
           <header className='flex items-center justify-between'>
           <a href="#" className='{styles.text}text-lg font-bold ' >3legant</a>

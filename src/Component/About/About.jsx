@@ -1,8 +1,9 @@
 import React from 'react'
+import BannerContainer from '../banner/BannerContainer'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div><BannerContainer/></div>
   )
 }
 

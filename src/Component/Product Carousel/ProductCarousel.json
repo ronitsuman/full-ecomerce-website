@@ -1,0 +1,23 @@
+[
+    {
+        "img":"Love-seat-sofa.svg",
+        "tittle": "LoveSeat Sofa",
+        "Price": "$ 199"
+
+
+    } ,
+    {
+        "img":"Love-seat-sofa.svg",
+        "tittle": "LoveSeat 2 Sofa",
+        "Price": "$ 299"
+
+
+    } ,
+    {
+        "img":"Love-seat-sofa.svg",
+        "tittle": "LoveSeat 3 Sofa",
+        "Price": "$ 399"
+
+
+    } 
+]

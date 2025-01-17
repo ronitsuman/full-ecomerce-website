@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import Header from './Component/Header/Headers'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Component/Home/Home'
@@ -8,9 +8,20 @@ import Product from './Component/Product/Product'
 import Headers  from './Component/Header/Headers'
 
 const App = () => {
+ 
+  const [cartCount, setCartCount] = useState(0);
+
+ 
+  const handleAddToCart = useCallback(() => {
+    setCartCount((prev) => prev + 1);
+  }, []); 
+
+
+  
+
   let router = createBrowserRouter([
     { path:'/',element :(<>
-      <Headers/>,
+      <Headers  cartCount={cartCount} />
       <Home/>
 
       
@@ -19,7 +30,7 @@ const App = () => {
 
   },
     { path:'/about',element :(<>
-      <Headers/>,
+      <Headers cartCount={cartCount}/>
       <About/>
 
       
@@ -28,7 +39,7 @@ const App = () => {
 
   },
     { path:'/shop',element :(<>
-      <Headers/>,
+      <Headers cartCount={cartCount}/>,
       <Shop/>
 
       
@@ -37,8 +48,8 @@ const App = () => {
 
   },
     { path:'/product',element :(<>
-      <Headers/>,
-      <Product/>
+      <Headers cartCount={cartCount}/>,
+      <Product  onAddToCart={handleAddToCart} />
 
       
 
@@ -52,7 +63,7 @@ const App = () => {
   <RouterProvider router = {router} />
 
    </>
-  )
+      )
 }
 
 export default App
